@@ -1,0 +1,4 @@
+glove.6B.*
+*.pickle
+iemocap_*
+*.csv
