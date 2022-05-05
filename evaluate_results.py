@@ -1,4 +1,5 @@
 import numpy as np
+import pandas as pd
 import seaborn as sn
 from sklearn.metrics import classification_report, confusion_matrix
 
@@ -35,6 +36,7 @@ def compare_results_of_bert_models(model_list, x_bert_test_list, y_test_list):
 
 
 def calculate_accuracy_metrics_and_print_cm(actual, model_preds):
+  da_labels = ['s', 'q', 'o', 'ans', 'c', 'ag', 'b', 'dag', 'oth', 'a', 'ap', 'g']
   cr = classification_report(actual, model_preds)
   cm = confusion_matrix(actual, model_preds)
   df_cm = pd.DataFrame(cm, index=da_labels, columns=da_labels)
